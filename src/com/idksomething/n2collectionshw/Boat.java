@@ -15,7 +15,7 @@ public class Boat {
             // Randomly decide if a seat is taken or not
             this.seats.add(random.nextBoolean());
         }
-        lastSpot = random.nextInt(100) < 90;
+        lastSpot = random.nextInt(100) > 90;
     }
 
     public boolean isLastSpot() {

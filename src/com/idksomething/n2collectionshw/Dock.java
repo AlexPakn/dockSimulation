@@ -23,6 +23,9 @@ public class Dock {
         return count == 0;
     }
     public void handleBoat(Boat boat) {
+        if(boat.isLastSpot()) {
+            return;
+        }
         List<Boolean> seats = boat.getSeats();
         for (int i = 0; i < seats.size(); i++) {
             if (seats.get(i)) {
@@ -32,6 +35,7 @@ public class Dock {
                 }
             }
         }
+
         for (int i = 0; i < seats.size(); i++) {
             if (!seats.get(i) && !waiting.isEmpty()) {
                 seats.set(i, true);
